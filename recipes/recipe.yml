@@ -11,13 +11,13 @@ modules:
         destination: /
 
   # Módulos customizados locais
-  - type: system
+  - type: base
     source: local
 
   - type: virtualization
     source: local
 
-  - type: flatpaks
+  - type: flatpak
     source: local
 
   - type: signing
