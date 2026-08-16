@@ -1,8 +1,0 @@
-# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
-- type: default-flatpaks
-  configurations:
-    - notify: true              # Send notification after install/uninstall is finished (true/false)
-      scope: syste              m# system flatpaks we want all users to have and not remove
-      install:
-        - com.brave.Browser     # Navegador Brave
-    - scope: user               # Also add Flathub user repo, but no user packages

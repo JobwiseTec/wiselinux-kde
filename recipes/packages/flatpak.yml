@@ -1,0 +1,33 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+
+type: default-flatpaks
+
+configurations:
+  - notify: true              # Send notification after install/uninstall is finished (true/false)
+    scope: system             # system flatpaks we want all users to have and not remove
+    install:
+      - com.brave.Browser                       # Navegador Brave
+      - org.kde.kcolorchooser                   # Seletor de cores rápido do ecossistema KDE
+      - org.kde.krita                           # Edição de imagem
+      - org.kde.kate                            # Editor de texto
+      - org.kde.okular                          # Visualizador de PDF
+      - org.kde.haruna                          # Reprodutor de vídeo fluido e moderno do KDE
+      - org.kde.kclock                          # Relógio
+      - org.kde.gwenview                        # Relógio, alarmes e timers do ecossistema KDE
+      - org.kde.kalk                            # Calculadora
+      - io.podman_desktop.PodmanDesktop         # Interface gráfica para gerenciamento de contêineres
+      - io.github.cosmic_utils.camera            # Aplicativo minimalista de câmera
+      - org.videolan.VLC                         # O clássico reprodutor multimídia universal
+      - com.obsproject.Studio                    # Gravação de tela e transmissão (OBS Studio)
+      - org.libreoffice.LibreOffice              # Suíte office robusta (excelente para dados/calc)
+      - org.onlyoffice.desktopeditors            # Alta compatibilidade com formatos MS Office
+      - com.github.johnfactotum.Foliate          # Leitor de e-books e PDFs moderno
+      - io.github.zarestia_dev.rclone-manager    # Gerenciador gráfico para o Rclone (Nuvem)
+      - org.telegram.desktop                     # Mensageiro instantâneo
+      - com.github.tchx84.Flatseal               # Gerenciador de permissões do Flatpak
+      - org.fedoraproject.MediaWriter             # Criador de pendrives bootáveis oficial do Fedora
+
+  - scope: user               # Also add Flathub user repo, but no user packages
+
+
+

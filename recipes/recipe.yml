@@ -10,14 +10,8 @@ modules:
       - source: system
         destination: /
 
-  # Módulos customizados locais
-  - type: base
-    source: local
-
-  - type: virtualization
-    source: local
-
-  - type: flatpak
-    source: local
+  - from-file: packages/base.yml
+  - from-file: packages/virtualization.yml
+  - from-file: packages/flatpak.yml
 
   - type: signing
