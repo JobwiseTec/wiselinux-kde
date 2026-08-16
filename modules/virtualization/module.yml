@@ -1,0 +1,29 @@
+# yaml-language-server: $schema=https://schema.blue-build.org/module-v1.json
+- type: dnf
+  install:
+    packages:
+
+      # Ecossistema de Contêineres
+      - toolbox                         # Contêineres de ferramentas de desenvolvimento mutáveis
+      - distrobox                       # Cria e gerencia contêineres integrados ao sistema host
+      - spice-vdagent                   # Agente de integração SPICE para máquinas virtuais
+      - podman                          # Engine de contêineres sem daemon, compatível com OCI
+      - podman-compose                  # Orquestração estilo docker-compose pro podman
+      - podman-docker                   # Compat CLI docker pro podman
+
+      # Virtualização
+      - qemu                            # Emulador de máquinas virtuais e de processador
+      - qemu-kvm                        # Integração do QEMU com o KVM (aceleração por hardware)
+      - libvirt                         # API e daemon para gerenciamento de virtualização
+      - virt-manager                    # Interface gráfica para gerenciar máquinas virtuais
+
+# garante que o libvirtd já vem habilitado, sem precisar do usuário rodar
+# `systemctl enable libvirtd` manualmente após instalar a imagem
+- type: systemd
+  system:
+    enabled:
+      - libvirtd.service
+      - podman.socket
+
+
+
