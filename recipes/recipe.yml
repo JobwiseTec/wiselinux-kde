@@ -1,27 +1,23 @@
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-# image will be published to ghcr.io/<user>/<name>
 name: wiselinux-kde
-# description will be included in the image's metadata
 description: Esta é minha imagem personalizada do KDE.
-# the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/ublue-os/kinoite-main
-image-version: latest # You can pin to a specific version of Fedora as well
+image-version: latest
 
-# module configuration, executed in order
-# you can include multiple instances of the same module
 modules:
   - type: files
     files:
       - source: system
-        destination: / # copies files/system/* into your image's root folder /
+        destination: /
 
-  # pacotes base (editor, prompt, etc.)
-  - from-file: base-packages.yml
+  # Módulos customizados locais
+  - type: system
+    source: local
 
-  # ecossistema de contêineres e virtualização
-  - from-file: virtualization_pakages.yml
+  - type: virtualization
+    source: local
 
-  # Flatpaks
-  - from-file: flatpak_pakages.yml
+  - type: flatpaks
+    source: local
 
-  - type: signing # this sets up the proper policy & signing files for signed images to work fully
+  - type: signing
