@@ -10,9 +10,22 @@ install:
   packages:
     - micro
     - btrfs-assistant
+    - libreswan
+    - strongswan
+    - NetworkManager-libreswan
+    - NetworkManager-strongswan
+
 
 remove:
   packages:
     - firefox
     - firefox-langpacks
     - kwrite
+
+
+type: dnf
+group-install:
+  with-optional: true
+  packages:
+      - networkmanager-submodules
+    
