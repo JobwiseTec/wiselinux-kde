@@ -14,7 +14,7 @@ install:
     - strongswan
     - NetworkManager-libreswan
     - NetworkManager-strongswan
-
+    - plasma-nm-openswan
 
 remove:
   packages:
